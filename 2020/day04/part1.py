@@ -1,0 +1,2 @@
+fieldSet = {'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'}
+print(sum(1 if fieldSet.issubset(i.split(':')[0] if i.split(':')[0] in fieldSet else '' for i in passport.split()) else 0 for passport in open('input.txt', 'r').read().split('\n\n')))

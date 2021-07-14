@@ -1,0 +1,35 @@
+L12 L8 R10 R10 L6 L4 L12 L12 L8 R10 R10 L6 L4 L12 R10 L8 L4 R10 L6 L4 L12 L12 L8 R10 R10 R10 L8 L4 R10 L6 L4 L12 R10 L8 L4 R10
+
+Necessary at start: L12 L8 R10
+Necessary at end: L12 L8 R10 R10 R10 L8 L4 R10 L6 L4 L12 R10 L8 L4 R10
+
+Take advantage of intersections somehow?
+
+A = L12 L8 R10 R10 L6 L4 L12
+B = R10 L8 L4 R10 L6 L4 L12
+
+
+
+
+
+
+
+
+A,B,A,B,C,B,A,C,B,C
+
+A = L,12,L,8,R,10,R,10
+B = L,6,L,4,L,12
+C = R,10,L,8,L,4,R,10
+
+>>> x = 'A,B,A,B,C,B,A,C,B,C'
+>>> print([ord(i) for i in x])
+[65, 44, 66, 44, 65, 44, 66, 44, 67, 44, 66, 44, 65, 44, 67, 44, 66, 44, 67]
+>>> x = 'L,12,L,8,R,10,R,10'
+>>> print([ord(i) for i in x])
+[76, 44, 49, 50, 44, 76, 44, 56, 44, 82, 44, 49, 48, 44, 82, 44, 49, 48]
+>>> x = 'L,6,L,4,L,12'
+>>> print([ord(i) for i in x])
+[76, 44, 54, 44, 76, 44, 52, 44, 76, 44, 49, 50]
+>>> x = 'R,10,L,8,L,4,R,10'
+>>> print([ord(i) for i in x])
+[82, 44, 49, 48, 44, 76, 44, 56, 44, 76, 44, 52, 44, 82, 44, 49, 48]

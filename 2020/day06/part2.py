@@ -1,0 +1,1 @@
+print(sum(sum(group.count(s) == len(group.split()) for s in group.split()[0]) for group in open('input.txt', 'r').read().split('\n\n')))
