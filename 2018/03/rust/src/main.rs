@@ -1,10 +1,11 @@
 use regex::Regex;
 use std::collections::HashMap;
 use std::collections::HashSet;
+use std::fs::read_to_string;
 
 fn main() {
-    let inpt: Vec<&str> =
-        include_str!("input.txt").trim().split("\n").collect();
+    let file = read_to_string("input.txt").unwrap();
+    let inpt: Vec<&str> = file.trim().split("\n").collect();
 
     let re = Regex::new(r"(\d+).*?(\d+).*?(\d+).*?(\d+).*?(\d+)").unwrap();
     let mut counter = HashMap::new();

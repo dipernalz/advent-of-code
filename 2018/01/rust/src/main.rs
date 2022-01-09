@@ -1,10 +1,12 @@
 use std::collections::HashSet;
+use std::fs::read_to_string;
 
 fn main() {
-    let inpt: Vec<i32> = include_str!("input.txt")
+    let inpt: Vec<i32> = read_to_string("input.txt")
+        .unwrap()
         .trim()
         .split("\n")
-        .map(|s| s.parse::<i32>().unwrap())
+        .map(|s| s.parse().unwrap())
         .collect();
 
     // Part 1

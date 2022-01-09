@@ -1,7 +1,10 @@
 use std::collections::HashMap;
+use std::fs::read_to_string;
 
 fn main() {
-    let inpt = include_str!("input.txt").trim();
+    let file = read_to_string("input.txt").unwrap();
+    let inpt = file.trim();
+
     let mut polymer = Vec::new();
     for c in inpt.chars() {
         polymer.push(c);

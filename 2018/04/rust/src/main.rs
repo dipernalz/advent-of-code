@@ -1,9 +1,10 @@
 use regex::Regex;
 use std::collections::HashMap;
+use std::fs::read_to_string;
 
 fn main() {
-    let mut inpt: Vec<&str> =
-        include_str!("input.txt").trim().split("\n").collect();
+    let file = read_to_string("input.txt").unwrap();
+    let mut inpt: Vec<&str> = file.trim().split("\n").collect();
     inpt.sort();
 
     let (mut mins_asleep, mut mins_tracker) = (HashMap::new(), HashMap::new());
