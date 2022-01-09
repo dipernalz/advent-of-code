@@ -1,3 +1,4 @@
+use std::cmp::min;
 use std::collections::HashMap;
 use std::fs::read_to_string;
 
@@ -26,7 +27,7 @@ fn main() {
     for c in alphabet.chars() {
         let mut temp = polymer.clone();
         temp.retain(|&a| a != c && a != c.to_ascii_uppercase());
-        min_length = std::cmp::min(min_length, react(&mut temp, &adjacent));
+        min_length = min(min_length, react(&mut temp, &adjacent));
     }
     println!("{}", min_length);
 }
@@ -37,8 +38,6 @@ fn react(polymer: &mut Vec<char>, adjacent: &HashMap<char, char>) -> u32 {
     while j < polymer.len() {
         if polymer[j] == adjacent[&polymer[i]] {
             length -= 2;
-            polymer[i] = '\0';
-            polymer[j] = '\0';
             match stack.pop() {
                 Some(k) => {
                     i = k;

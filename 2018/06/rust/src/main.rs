@@ -1,3 +1,4 @@
+use std::cmp::{max, min};
 use std::collections::HashMap;
 use std::collections::HashSet;
 use std::fs::read_to_string;
@@ -15,10 +16,10 @@ fn main() {
     let (mut min_x, mut max_x, mut min_y, mut max_y) =
         (i16::MAX, 0, i16::MAX, 0);
     for &(x, y) in coords.iter() {
-        min_x = std::cmp::min(min_x, x);
-        max_x = std::cmp::max(max_x, x);
-        min_y = std::cmp::min(min_y, y);
-        max_y = std::cmp::max(max_y, y);
+        min_x = min(min_x, x);
+        max_x = max(max_x, x);
+        min_y = min(min_y, y);
+        max_y = max(max_y, y);
     }
 
     let mut nearest = 0;
