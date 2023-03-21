@@ -1,0 +1,6 @@
+(include_subdirs unqualified)
+
+(executable
+  (name      D04)
+  (libraries base core stdio)
+)
