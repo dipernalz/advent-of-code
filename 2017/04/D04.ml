@@ -10,8 +10,8 @@ let sort s =
   |> String.of_char_list
 ;;
 
-let f s =
-  match List.find_a_dup ~compare:String.compare s with
+let f p =
+  match List.find_a_dup ~compare:String.compare p with
   | Some _ -> 0
   | None -> 1
 ;;
@@ -19,5 +19,5 @@ let f s =
 let () =
   let input = Input.read_lines "input.txt" |> List.map ~f:(String.split ~on:' ') in
   printf "%d\n" (List.sum (module Int) ~f input);
-  printf "%d\n" (List.sum (module Int) ~f:(fun p -> List.map ~f:sort p |> f) input)
+  printf "%d\n" (List.sum (module Int) ~f (List.map ~f:(List.map ~f:sort) input))
 ;;

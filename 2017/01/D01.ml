@@ -1,8 +1,6 @@
 open Core
 open Stdio
 
-let char_to_int c = Char.to_int c - 0x30
-
 let rec f s i n g =
   let len = String.length s in
   if i = len
@@ -10,6 +8,7 @@ let rec f s i n g =
   else (
     let c0 = String.get s i in
     let c1 = String.get s (g s i % len) in
+    let char_to_int c = Char.to_int c - 0x30 in
     f s (i + 1) (n + if Char.equal c0 c1 then char_to_int c0 else 0) g)
 ;;
 

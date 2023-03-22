@@ -47,8 +47,8 @@ let g n =
     sum
   in
   let rec g' (i, r, c) =
-    let s = neighbor_sum r c in
-    if s > n then s else g' (next_pos i r c)
+    let sum = neighbor_sum r c in
+    if sum > n then sum else g' (next_pos i r c)
   in
   g' (0, 0, 0)
 ;;
