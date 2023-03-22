@@ -1,0 +1,3 @@
+(executable
+ (name D06)
+ (libraries base core input stdio))
