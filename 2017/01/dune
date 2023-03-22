@@ -1,6 +1,3 @@
-(include_subdirs unqualified)
-
 (executable
-  (name      D01)
-  (libraries base core stdio)
-)
+ (name D01)
+ (libraries base core input stdio))
