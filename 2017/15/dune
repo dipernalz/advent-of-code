@@ -1,0 +1,3 @@
+(executable
+ (name D15)
+ (libraries base core input knot_hash stdio str))
