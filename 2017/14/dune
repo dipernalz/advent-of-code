@@ -1,3 +1,3 @@
 (executable
- (name D10)
+ (name D14)
  (libraries base core input knot_hash stdio str))
